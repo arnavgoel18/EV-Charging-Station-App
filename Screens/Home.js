@@ -18,7 +18,6 @@ function Home({navigation}){
 
     const doThis = () => Alert.alert("Your Slot Has Been Reserved for 30 Mins");
 
-    // navigation.navigate('TempCodeRunner');
     function showTesla(){
         setCardsToMap([]);
         setCardsToMap([
