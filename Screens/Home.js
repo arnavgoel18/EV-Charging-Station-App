@@ -1,6 +1,6 @@
 import React, { Component, useState } from 'react'
 
-import {StyleSheet, ScrollView, View, Text, Button} from 'react-native'
+import {StyleSheet, ScrollView, View, Text, Button, A} from 'react-native'
 import {TouchableOpacity, ImageBackground, Image, Alert} from 'react-native'
 
 import { SafeAreaView } from 'react-native';
@@ -10,12 +10,17 @@ import teslaChargerImage from '../assets/charginStationTesla.jpeg'
 import morrisChargerImage from '../assets/chargingStationMorris.jpeg'
 import tataChargerImage from '../assets/chargingStationTata.jpeg'
 import mahindraChargerStation from '../assets/chargingStationMahindra.jpeg'
+import IndividualPage from './IndividualPage';
 
 function Home({navigation}){
 
     const [cardsToMap, setCardsToMap] = useState([]);
-    
+
+    const doThis = () => Alert.alert("Your Slot Has Been Reserved for 30 Mins");
+
+    // navigation.navigate('TempCodeRunner');
     function showTesla(){
+        setCardsToMap([]);
         setCardsToMap([
             {
                 id: 'TS1',
@@ -36,7 +41,6 @@ function Home({navigation}){
                 image: teslaChargerImage,
             }
         ])
-        {navigation.navigate("IndividualPage")}
     }   
 
     function showMahindra(){
@@ -108,9 +112,9 @@ function Home({navigation}){
     return(
         <View>
             <ScrollView style={styles.container}>
-                <View style={styles.header}>
-                    <Text style={styles.headerText}>Charging Stations</Text>
-                </View>
+                    <View style={styles.header}>
+                        <Text style={styles.headerText}>Charging Stations</Text>
+                    </View>
 
                 <View style={styles.textHeading}>
                     <Text style={styles.textHeadingText}>Choose your {'\n'}<Text style={styles.span}>Manufacturer</Text></Text>
@@ -141,7 +145,7 @@ function Home({navigation}){
                             proTime={entry.time} 
                             proImage={entry.image} 
                             proName={entry.stationName}
-                            onPress={() => navigation.navigate("IndividualPage")}
+                            onPress={() => navigation.navigate('IndividualPage')}
                         />
                     )
                 }

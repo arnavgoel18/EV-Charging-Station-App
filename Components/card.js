@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
 
-import { StyleSheet, View, Text, TouchableOpacity , ImageBackground} from 'react-native'
+import { StyleSheet, View, Text, TouchableOpacity , ImageBackground, Alert} from 'react-native'
 
 import image from '../assets/charginStationTesla.jpeg'
+import { Button } from 'react-native-elements'
 
 function card(props){
 
     return(
         <View style={cardStyle.cardMainContainer}>
-                <TouchableOpacity style={cardStyle.cardContainer}>
+                <TouchableOpacity style={cardStyle.cardContainer} onPress={props.onPress}>
                     <ImageBackground source={props.proImage} 
                     style={{width: '100%', height: '100%', 
                     overflow: 'hidden', borderRadius: 20}}>

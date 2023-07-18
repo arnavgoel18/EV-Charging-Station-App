@@ -18,7 +18,7 @@ function IndividualPage(){
             <View style={indiPageStyle.header}>
                 <View style={indiPageStyle.stationName}>
                     <Text>Tesla Charging Point 103</Text>
-                </View>
+                </View>     
             </View>
 
             <View style={indiPageStyle.circularPictureContainer}>
@@ -32,7 +32,6 @@ function IndividualPage(){
                 <View style={indiPageStyle.infoContainer}>
                     <Text style={{fontSize: 19,}}>
                         <Text style={indiPageStyle.boldText}>Chargers Currently Available:</Text> 
-                        5
                     </Text>
                     <Text style={{fontSize: 19,}}>
                         <Text style={indiPageStyle.boldText}>Time to Destination:</Text> 
